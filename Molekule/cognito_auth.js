@@ -2,12 +2,10 @@
 require('cross-fetch/polyfill');
 var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 // Import AWS
-import AWS from 'aws-sdk';
-
-import AmazonCognitoIdentity from 'amazon-cognito-identity-js';
+var AWS = require('aws-sdk/global');
 
 var authenticationData = {
-	Username: 'username',
+	Username: 'Username',
 	Password: 'password',
 };
 var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(
@@ -28,13 +26,13 @@ cognitoUser.authenticateUser(authenticationDetails, {
 		var accessToken = result.getAccessToken().getJwtToken();
 
 		//POTENTIAL: Region needs to be set if not already set previously elsewhere.
-		AWS.config.region = '<region>';
+		AWS.config.region = 'us-west-2';
 
 		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-			IdentityPoolId: '...', // your identity pool id here
+			IdentityPoolId: 'us-east-1:56c743d3-310d-4a0e-bf93-6fb7e8c9aad5', // your identity pool id here
 			Logins: {
 				// Change the key below according to the specific region your user pool is in.
-				'cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID>': result
+				'cognito-idp.us-west-2.amazonaws.com/us-west-2_KqrEZKC6r': result
 					.getIdToken()
 					.getJwtToken(),
 			},
@@ -51,8 +49,7 @@ cognitoUser.authenticateUser(authenticationDetails, {
 			}
 		});
 	},
-
 	onFailure: function(err) {
-		alert(err.message || JSON.stringify(err));
+		console.log(err.message || JSON.stringify(err));
 	},
 });
