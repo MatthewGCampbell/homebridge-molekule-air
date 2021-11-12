@@ -1,2 +1,0 @@
-// Molekule API TypeScript
-
