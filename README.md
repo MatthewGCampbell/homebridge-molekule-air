@@ -1,11 +1,12 @@
 
 <p align="center">
 
-<img src="https://github.com/MatthewGCampbell/homebridge-molekule-air/ReadmeImages/Molekule_Logo-removebg-preview.png" width="150">
+<img src="https://github.com/MatthewGCampbell/homebridge-molekule-air/blob/master/Readme_Images/Molekule_Logo.png" width="150">
 
 </p>
 
 This is in no way part of Molekule, Just a fun project I did, its for the people with the air purifies without HomeKit such as the Mini :).
+<img src="https://github.com/MatthewGCampbell/homebridge-molekule-air/blob/master/Readme_Images/Molekule_mini.png" width="200">
 
 # Homebridge Platform Plugin Template
 
